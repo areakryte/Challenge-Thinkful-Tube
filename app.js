@@ -21,7 +21,7 @@ $(document.body).on("click", ".submit", function(event){
       //sadly https
       //var redirectImg = "//images.weserv.nl/?url=" + basicThumbnail.url;
 
-      var thumbnail = "<a href=https://www.youtube.com/watch?v=" + youtubeLink + "><img scr=" + basicThumbnail.url + ">";
+      var thumbnail = "<a href=https://www.youtube.com/watch?v=" + youtubeLink + "><img src=" + basicThumbnail.url + ">";
 
       $("body").append(thumbnail);
       });
