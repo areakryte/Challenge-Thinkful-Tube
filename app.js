@@ -10,4 +10,24 @@ $(document.body).on("click", ".submit", function(event){
     '"q": "' +$("input").val() + '"' +
   '}';
 
+  $.get(
+    youtubeEndPoint,
+    {
+      part:'snippet',
+      q: $("input").val(),
+      key: youtubeKey
+    },
+    function(data){
+      console.log(data.items[0]);
+      var basicThumbnail = data.items[0].snippet.thumbnails.default;
+      console.log(basicThumbnail);
+
+      //sadly https
+      var redirectImg = "//images.weserv.nl/?url=" + basicThumbnail.url;
+
+      var thumbnail = "<a href=https://www.youtube.com/watch?v=" + data.items[0].id.videoId + "><img scr=" + basicThumbnail.url + ">";
+
+      $("body").append(thumbnail);
+      });
+
 });
