@@ -17,11 +17,7 @@ $(document.body).on("click", ".submit", function(event){
       console.log(basicThumbnail);
 
       var youtubeLink = data.items[0].id.videoId;
-
-      //sadly https
-      //var redirectImg = "//images.weserv.nl/?url=" + basicThumbnail.url;
-
-      var thumbnail = "<a href=https://www.youtube.com/watch?v=" + youtubeLink + "><img src=" + basicThumbnail.url + ">";
+      var thumbnail = "<a href=https://www.youtube.com/watch?v=" + youtubeLink + "><img scr=" + basicThumbnail.url + ">";
 
       $("body").append(thumbnail);
       });
